@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {sum} from './01_Hello_test/03';
+import {sum} from './03/03';
 
 let a = sum;
 
