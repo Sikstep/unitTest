@@ -1,4 +1,4 @@
-import {StudentType} from '../02/02';
+import {StudentType} from '../02Obj/02';
 import {addSkill, doesStudentLiveIn, makeStudentActive} from './03';
 
 let student: StudentType;

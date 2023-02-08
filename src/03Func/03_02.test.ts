@@ -1,4 +1,4 @@
-import {CityType} from '../02/02_02';
+import {CityType} from '../02Obj/02_02';
 import {addMoneyToBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from './03';
 
 
