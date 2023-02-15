@@ -1,20 +1,28 @@
-import React from 'react';
-import {findAllByDisplayValue} from '@testing-library/react';
-
+import React, {ChangeEvent, MouseEvent} from 'react';
 
 
 export const User = () => {
 
-    const deleteUser = () => {
-        alert('user have been deleted')
+    const deleteUser = (e: MouseEvent<HTMLButtonElement>) => {
+        console.log(e.currentTarget.value)
+
     }
 
-    const saveUser = () => {
-        alert('user have been saved')
+    const nameNameChanged = () => {
+        console.log('name changed')
+    }
+    const onBlurChanged = () => {
+        console.log('focus changed')
     }
 
-    return <div>Dumych
-        <button onClick={deleteUser}>delete</button>
-        <button onClick={saveUser}>save</button>
+    const onAgeChanged = (e: ChangeEvent<HTMLInputElement>) => {
+        console.log('Age changed' + e.currentTarget.value)
+    };
+
+    return <div>
+        <textarea tabIndex={1} onChange={nameNameChanged}>Dumych</textarea>
+        <input tabIndex={2} onChange={onAgeChanged} type={'number'}/>
+        <button name={'delete'} tabIndex={3} onClick={deleteUser}>search</button>
+
     </div>
 }
