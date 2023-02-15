@@ -11,6 +11,7 @@ function App() {
     const LiElements = () => {
         return (
             <>
+
                 {names.map(el => (
                     <li>
                         {el}
@@ -27,7 +28,6 @@ function App() {
                 <div><LiElements/></div>
                 {LiEl}
                 {users.map( el => <li key={el.id}>{el.id} {el.name}</li> )}
-
             </ul>
         </div>
     );
