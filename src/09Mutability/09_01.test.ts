@@ -22,7 +22,7 @@ test('reference type test', () => {
 
 })
 
-test('array test', () => {
+test('array reference test', () => {
     let users = [
         {
             name: 'Dimych',
@@ -40,6 +40,15 @@ test('array test', () => {
 
     expect(users[2]).toEqual({name: 'Bandugan', age: 10});
 
+})
 
+test('value type test', () => {
+    let usersCount = 100;
+
+    let adminsCount = usersCount;
+
+    adminsCount += 1;
+
+    expect(adminsCount).toBe(101);
 
 })
