@@ -1,4 +1,5 @@
 import {userType} from './09_01';
+import {UserType} from '../08Arrays/08_01.test';
 
 
 const icreaseAge = (us: userType) => {
@@ -9,6 +10,9 @@ test('reference type test', () => {
     let user = {
         name: 'Dimych',
         age: 32,
+        address: {
+            title: 'Minsk',
+        }
     }
     icreaseAge(user)
 
@@ -51,4 +55,28 @@ test('value type test', () => {
 
     expect(adminsCount).toBe(101);
 
+})
+
+test('reference type test2', () => {
+    let user: userType = {
+        name: 'Dimych',
+        age: 32,
+        address: {
+            title: 'Minsk',
+        }
+    }
+
+    // let addr = user.address
+
+    let user2: userType = {
+        name: 'Natasha',
+        age: 30,
+        address: user.address,
+    }
+
+    user2.address.title = 'Kanari';
+
+
+    expect(user.address.title).toBe('Kanari');
+    expect(user2.address.title).toBe('Kanari');
 })
