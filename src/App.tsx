@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {SuperButton} from './SuperButton/SuperButton';
 
 
 function App() {
@@ -11,7 +12,6 @@ function App() {
     const LiElements = () => {
         return (
             <>
-
                 {names.map(el => (
                     <li>
                         {el}
@@ -22,13 +22,16 @@ function App() {
     }
     const LiEl = names.map(el => <li>{el}</li>)
 
+
     return (
         <div className="App">
             <ul>
                 <div><LiElements/></div>
                 {LiEl}
-                {users.map( el => <li key={el.id}>{el.id} {el.name}</li> )}
+                {users.map(el => <li key={el.id}>{el.id} {el.name}</li>)}
             </ul>
+            <SuperButton alertMess={'You click me!!!'}/>
+            <SuperButton alertMess={'You click me!!!'} disable={true}/>
         </div>
     );
 }
