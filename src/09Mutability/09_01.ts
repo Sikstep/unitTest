@@ -1,8 +1,16 @@
+import React from 'react';
+
+export type userType = {
+    name: string
+    age: number
+}
+
 let user = {
     name: 'Dimych',
     age: 32,
 }
 
-const icreaseAge = (user) => {
-    user.age++;
+const icreaseAge = (us: userType) => {
+    us.age++;
 }
+icreaseAge(user);
