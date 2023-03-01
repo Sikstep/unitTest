@@ -113,3 +113,16 @@ test('reference type array test', () => {
     expect(users[0].name).toBe('Dmitry');
     expect(user.name).toBe('Dmitry');
 })
+
+test('sort array test', () => {
+  const letters = ['c', 'd', 'a', 'z', 'e']
+
+    pasportist(letters);
+
+  expect(letters).toEqual(['c', 'd', 'a', 'z', 'e'])
+
+});
+
+function pasportist(letters: Array<string>) {
+    [...letters].sort()
+}
