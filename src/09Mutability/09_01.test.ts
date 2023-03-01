@@ -1,5 +1,4 @@
 import {userType} from './09_01';
-import {UserType} from '../08Arrays/08_01.test';
 
 
 const icreaseAge = (us: userType) => {
@@ -58,12 +57,15 @@ test('value type test', () => {
 })
 
 test('reference type test2', () => {
+
+    const address = {
+        title: 'Minsk',
+    }
+
     let user: userType = {
         name: 'Dimych',
         age: 32,
-        address: {
-            title: 'Minsk',
-        }
+        address: address
     }
 
     // let addr = user.address
@@ -71,12 +73,43 @@ test('reference type test2', () => {
     let user2: userType = {
         name: 'Natasha',
         age: 30,
-        address: user.address,
+        address: address
     }
 
-    user2.address.title = 'Kanari';
+    user2.address.title = 'Minsk City';
 
 
-    expect(user.address.title).toBe('Kanari');
-    expect(user2.address.title).toBe('Kanari');
+    expect(user.address.title).toBe('Minsk City');
+    expect(user2.address.title).toBe('Minsk City');
+})
+
+test('reference type array test', () => {
+
+    const address = {
+        title: 'Minsk',
+    }
+
+    let user: userType = {
+        name: 'Dimych',
+        age: 32,
+        address: address
+    }
+
+    let user2: userType = {
+        name: 'Natasha',
+        age: 30,
+        address: address
+    }
+
+    const users = [ user, user2, { name: 'Misha', age: 18, address: address}]
+
+    const admins = [ user, user2]
+
+    admins[0].name = 'Dmitry';
+
+    address.title = 'Minsk City';
+
+
+    expect(users[0].name).toBe('Dmitry');
+    expect(user.name).toBe('Dmitry');
 })

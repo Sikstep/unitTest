@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type userType = {
     name: string
     age: number
@@ -14,4 +12,3 @@ let user = {
 const icreaseAge = (us: userType) => {
     us.age++;
 }
-icreaseAge(user);
