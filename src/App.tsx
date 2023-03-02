@@ -31,7 +31,7 @@ function App() {
                 {users.map(el => <li key={el.id}>{el.id} {el.name}</li>)}
             </ul>
             <SuperButton alertMess={'You click me!!!'}/>
-            <SuperButton alertMess={'You click me!!!'} disable={true}/>
+            <SuperButton alertMess={'ЖИВУ'} disable={true}/>
         </div>
     );
 }

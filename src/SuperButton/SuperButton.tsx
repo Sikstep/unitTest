@@ -12,9 +12,7 @@ export const SuperButton: React.FC<SuperButtonType> = ({alertMess, disable}) => 
     }
 
     return (
-        <div>
             <button className={disable ? s.disable : ''} disabled={disable} onClick={() => onClickHandler(alertMess)}>Click me</button>
-        </div>
     );
 };
 
