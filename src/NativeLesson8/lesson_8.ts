@@ -18,9 +18,18 @@ export function sum(...nums: Array<number>): number {
 //  - "00", если такого треугольника не существует.
 
 export function getTriangleType(a: number, b: number, c: number): string {
+    switch (true) {
+        case (a + b < c || b + c < a || c + a < b):
+            return '00';
+        case (a === b && b === c && c === a):
+            return '10';
+        case (a === b || b === c || c === a ):
+            return '01';
+        case (a !== b && b !== c && c !== a):
+            return '11';
+    }
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return ''
 }
 
 
@@ -28,9 +37,9 @@ export function getTriangleType(a: number, b: number, c: number): string {
 // сумму цифр этого числа
 
 export function getSum(number: number): number {
-    //...здесь пишем код.
-    // В return стоит "заглушка", чтоб typescript не ругался
-    return 123
+       //...здесь пишем код.
+           // В return стоит "заглушка", чтоб typescript не ругался
+    return JSON.stringify(number).split('').reduce((total, el) => total + Number(el), 0)
 }
 
 
@@ -42,7 +51,9 @@ export function getSum(number: number): number {
 export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return true
+    const evenArr = arr.filter((el, index) => index % 2 === 0).reduce((total, el) => total + el,0);
+    const oddArr = arr.filter((el, index) => index % 2 !== 0).reduce((total, el) => total + el,0);
+    return evenArr > oddArr
 }
 
 // 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив. 
@@ -53,7 +64,7 @@ export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
 export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return []
+    return array.filter(el =>  Number.isInteger(el) && el >= 0).map(el => el ** 2)
 }
 
 // 6. Функция принимает параметром целое не отрицательное число N и возвращает сумму всех чисел от 0 до N включительно
@@ -62,7 +73,12 @@ export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
 export function sumFirstNumbers(N: number): number {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 0
+    return N == 0 ? N : N + sumFirstNumbers(N - 1);
+    // let num = 0;
+    // for (let i = 0; i <= N; i++) {
+    //     num = num + i
+    // }
+    // return num;
 }
 
 // ...и "лапку" вверх!!!!
